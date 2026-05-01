@@ -20,7 +20,7 @@ When companies merge, their data systems are often fragmented. This project solv
 
 ## 🏗️ Architecture
 
-<img width="100%" height="100%" alt="Architecture" src="/workspaces/de-fmcg-databricks/resources/project_archi.png" />
+<img width="100%" height="100%" alt="Architecture" src="resources/project_archi.png" />
 
 ---
 
