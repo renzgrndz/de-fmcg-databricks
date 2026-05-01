@@ -20,21 +20,64 @@ When companies merge, their data systems are often fragmented. This project solv
 
 ## 🏗️ Architecture
 
-### 🔷 High-Level Architecture Diagram
+<img width="100%" height="100%" alt="Architecture" src="/workspaces/de-fmcg-databricks/resources/project_archi.png" />
 
-```mermaid
-flowchart LR
-    A[Source Systems<br>Company A & Company B] --> B[Amazon S3 (Raw Data)]
-    
-    B --> C[Bronze Layer<br>Raw Ingestion]
-    C --> D[Silver Layer<br>Cleaned & Transformed]
-    D --> E[Gold Layer<br>Business Aggregates]
+---
 
-    E --> F[BI Dashboard]
-    E --> G[Genie Query Engine]
+## 🔄 Pipeline Flow:
 
-    subgraph Databricks Lakehouse
-        C
-        D
-        E
-    end
+1. **Data Ingestion**
+    - Upload raw datasets to Amazon S3
+    - Connect S3 to Databricks
+    - Load into Bronze layer
+2. **Data Transformation**
+    - Clean and standardize data
+    - Process dimension tables
+    - Align schemas across companies
+3. **Fact Processing**
+    - Historical Load
+    - Initial full load
+    - Incremental Load
+    - Ongoing updates
+4. **Data Modeling**
+    - Build fact and dimension tables
+    - Optimize for analytical queries
+5. **Orchestration**
+    - Automate workflows within Databricks
+6. **Serving Layer**
+    - Create denormalized Gold tables
+    - Enable fast querying via Genie
+7. **Visualization**
+    - Build dashboards for business insights
+
+---
+
+## 📈 Key Features
+- End-to-end ETL pipeline
+- Real-world FMCG acquisition use case
+- Medallion architecture implementation
+- Incremental data processing
+- Scalable lakehouse design
+
+---
+
+## 🧠 Key Learnings
+- Databricks + Spark pipeline development
+- Medallion architecture in practice
+- Data consolidation strategies
+- Incremental ETL design
+- Analytics-ready data modeling
+
+---
+
+## 🔮 Future Improvement
+- CI/CD pipeline integration
+- Data quality checks (e.g., Great Expectations)
+- Streaming pipelines (Kafka / Spark Streaming)
+- Cloud deployment (AWS / Azure / GCP)
+
+---
+
+## 📺 Reference
+- Codebasics Databricks End-to-End Data Engineering Project
+- Link: https://www.youtube.com/watch?v=U6ZUKWdfSLY&list=WL&index=13
